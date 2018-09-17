@@ -1,0 +1,58 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package controlstructures;
+
+//import user input code
+import java.util.Scanner;
+
+/**
+ * Checks friend compatability to practice if statements
+ * @author Jake Adams
+ */
+public class MightWeBeFriends {
+    public static void main(String[] args){
+        //builds a scanner object and stores
+        //in variable Scanner
+        Scanner myScanner = new Scanner(System.in);
+        //read a line from the userand store in variable
+        String userInput = myScanner.next();
+        System.out.println("You Typed: " + userInput);
+        
+        
+        
+        int earnedPts = 0;
+        int possiblePts = 50;
+        
+        //boolean statement; is their age between seventeen and twenty-five?
+        boolean betweenSeventeenAndTwentyFive = true;
+        
+        System.out.println("Hello! Think we'll be friends?");
+        
+        if(betweenSeventeenAndTwentyFive){
+            earnedPts = earnedPts + 10;
+            System.out.println("Me too!");
+        
+        //initialise "else" control for if
+        } else {
+            
+            //boolean statement; do they get along?
+            boolean getAlong = true;
+            
+            //open nested if/else
+            if(getAlong){ 
+                earnedPts = earnedPts + 5;
+            
+            //open nested else control
+            } else {
+                System.out.println("That sucks.");
+            
+            //close nested else
+            }
+        } //close else control
+        System.out.println("Final point total: " + earnedPts + "/50");
+    } //close if/else
+            
+} //close main
