@@ -1,0 +1,67 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package controlstructures;
+
+//import user input code
+import java.util.Scanner;
+
+/**
+ * Checks friend compatability to practice if statements
+ * @author Jake Adams
+ */
+public class MightWeBeFriends {
+    public static void main(String[] args){
+        //builds a scanner object and stores
+        //in variable Scanner
+        Scanner myScanner = new Scanner(System.in);
+        //read a line from the userand store in variable
+        int userInput = myScanner.nextInt();
+        System.out.println("You Typed: " + userInput);
+        
+        int getAlong;
+        int responseAge;
+        int responsePoli;
+        int earnedPts = 0;
+        int possiblePts = 50;
+        
+        //boolean statement; is their age between seventeen and twenty-five?
+        
+        System.out.println("Hello! Think we'll be friends?");
+        Scanner keyboardReader = new Scanner (System.in);
+                
+        System.out.println("Are you between seventeen and twenty five? (1= yes 0 = no)");
+        responseAge = keyboardReader.nextInt();
+        
+       
+        if(responseAge == 1){
+            earnedPts = earnedPts + 10;
+            System.out.println("Me too!");
+        
+        //initialise "else" control for if
+        } else {
+            
+            //int; do they get along?
+            
+            System.out.println("Can you get along with people of those ages? (1 = yes 0 = no)");
+            getAlong = keyboardReader.nextInt();
+            
+            //open nested if/else
+            if(getAlong == 1){ 
+                earnedPts = earnedPts + 5;
+            
+            //open nested else control
+            } else {
+                System.out.println("Sorry.");
+            
+            //close nested else
+            }
+        } //close else control
+        
+        System.out.println("Do you like discussing politics?");
+        System.out.println("Final point total: " + earnedPts + "/50");
+    } //close if/else
+            
+} //close main
