@@ -24,6 +24,9 @@ public class MightWeBeFriends {
         int getAlong;
         int responseAge;
         int responsePoli;
+        int responseLib;
+        int responseCons;
+        int responseWrite;
         int earnedPts = 0;
         int possiblePts = 50;
         
@@ -60,7 +63,55 @@ public class MightWeBeFriends {
             }
         } //close else control
         
-        System.out.println("Do you like discussing politics?");
+        //open inquiry; do they like political discussion
+        System.out.println("Do you like discussing politics? 1 = yes, 0 = no.");
+        
+        responsePoli = keyboardReader.nextInt();
+        if(responsePoli == 1){
+            earnedPts = earnedPts + 10;
+            System.out.println("So do I!");
+            //open else control for politic response
+        } else {
+            System.out.println("That sucks.");
+            earnedPts = earnedPts + 0;
+            
+            
+        } //close else
+        //open inquiry; are they a liberal
+        System.out.println("Are you a liberal? 1 = yes, 0 = no.");
+        
+        responseLib = keyboardReader.nextInt();
+        if(responseLib == 1){
+            earnedPts = earnedPts +20;
+            System.out.println("Great! Me too!");
+        } else {
+            responseCons = keyboardReader.nextInt();
+            System.out.println("Aw, I'm sorry. Hopefully we can still get along.");
+            //open nested if/else for conservative response
+            System.out.println("Are you a conservative? 1 = yes, 0 = no.");
+            if(responseCons == 1){
+                System.out.println("I'm sorry. I don't think we can be friends.");
+                
+            } else {
+                System.out.println("Okay, I think we can still get along");
+                earnedPts = earnedPts + 5;
+            
+            } //close nested if else
+        } //close else
+        
+        //open inquiry; do they like writing
+        System.out.println("Do you like writing? 1 = yes, 0 = no.");
+        responseWrite = keyboardReader.nextInt();
+        if(responseWrite == 1){
+            System.out.println("Fantastic! I'm a writer, too!");
+            earnedPts = earnedPts + 10;
+            
+        } else {
+            System.out.println("Aww. Well, hopefully you still like to read.");
+            earnedPts = earnedPts + 10;
+        } //close if/else
+        
+                 
         System.out.println("Final point total: " + earnedPts + "/50");
     } //close if/else
             
