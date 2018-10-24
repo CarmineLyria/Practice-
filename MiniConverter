@@ -1,0 +1,99 @@
+
+package unitconverter;
+
+//import scanner for user input
+
+import java.util.Scanner;
+
+
+/**
+ *
+ * @author LyriaRose
+ */
+public class UnitConverter {
+    /**
+     * @param args the command line arguments
+     */
+    
+    
+    int poundsValue;
+    int gallonsValue;
+    
+    
+    
+    public static void main(String[] args) {
+        System.out.println("Hello! What unit would you like to convert?");
+        System.out.println("1 = Miles to Kilometres");
+        System.out.println("2 = Pounds to Kilogrammes");
+        System.out.println("3 = Gallons to Litres");
+        System.out.println("4 = Do nothing");
+        Scanner initialInput = new Scanner (System.in);
+        //creater scanner for user input on initial question
+        int responseConversion;
+        //integer for their response to the initial question
+        responseConversion = initialInput.nextInt();
+        //user responsds
+        
+        switch (responseConversion){ //open switch block
+            
+        
+            case 1:  //reference miles conversion method
+                milesConverter();
+                break;
+            
+            case 2: //reference pounds conversion method
+                poundsConverter();
+                break;
+            
+            case 3: //reference gallons conversion method
+                gallonsConverter();
+                break;
+            
+            case 4:
+                break; //exit switch
+        } //exit switch control
+        
+    } // close main
+    
+    public static void milesConverter() {
+        double milesValue;
+        //the integer for the miles value the user entered
+        double formulaKm;
+        formulaKm = 1.609;
+        //the numeral to multiply by
+        Scanner milesResponse = new Scanner (System.in);
+        //declare new scanner for reading user response
+        System.out.println("How many miles?");
+        milesValue = milesResponse.nextDouble()*formulaKm;
+        System.out.println("Final distance in km:" + milesValue);
+    } //close miles conversion method
+    
+    public static void poundsConverter() {
+        double poundsValue;
+        //the initial weight
+        double formulaKg;
+        formulaKg = 2.205;
+        //the formula for weight conversion
+        Scanner poundsResponse = new Scanner (System.in);
+        //declare new scanner for reading user response
+        System.out.println("How many pounds?");
+        poundsValue = poundsResponse.nextDouble()*formulaKg;
+        System.out.println("Final weight in kilogrammes:" + poundsValue);
+    } // close pounds conversion method
+    
+    public static void gallonsConverter() {
+        double gallonsValue;
+        //the initial volume in gallons
+        double formulaLi;
+        formulaLi = 3.785;
+        //set the value for volume conversion
+        Scanner gallonsResponse = new Scanner (System.in);
+        //declare new scanner for reading user response
+        System.out.println("How many gallons?");
+        gallonsValue = gallonsResponse.nextDouble()*formulaLi;
+        System.out.println("Final weight in litres:" + gallonsValue);
+    } //close gallons conversion method
+    
+    
+    
+}
